@@ -2,116 +2,287 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.D.S | Student Resources</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #26364a;
-    }
-    header {
-      background: #142d4e;
-      color: white;
-      padding: 55px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 42px;
-      margin: 0 0 12px;
-      letter-spacing: 3px;
-    }
-    header p { color: #c9d9ec; }
-    main {
-      max-width: 850px;
-      margin: 35px auto;
-      padding: 0 18px;
-    }
-    .card {
-      background: white;
-      padding: 28px;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px #142d4e12;
-    }
-    .card h2 { color: #142d4e; }
-    .button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 13px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    .button:hover { background: #1d4ed8; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #68778b;
-      font-size: 13px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>M.D.S | Public Resources</title>
+
+    <meta name="description"
+          content="M.D.S - Ressources et guides pratiques pour les étudiants en informatique et les futurs ingénieurs logiciels.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0e13;
+            color: #f5f5f5;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 35px 8%;
+            border-bottom: 1px solid #252b35;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #42c7b5;
+        }
+
+        .header-label {
+            color: #929baa;
+            font-size: 13px;
+        }
+
+        .hero {
+            padding: 90px 8% 65px;
+            max-width: 1000px;
+        }
+
+        .eyebrow {
+            color: #42c7b5;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #42c7b5;
+        }
+
+        .intro {
+            color: #a7afbd;
+            max-width: 600px;
+            font-size: 16px;
+        }
+
+        .resources {
+            padding: 20px 8% 90px;
+        }
+
+        .section-title {
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            max-width: 1050px;
+        }
+
+        .card {
+            background: #121720;
+            border: 1px solid #29313d;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #42c7b5;
+        }
+
+        .number {
+            color: #42c7b5;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #9da6b5;
+            font-size: 14px;
+            min-height: 70px;
+            margin-bottom: 25px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #42c7b5;
+            color: #08110f;
+        }
+
+        .btn-primary:hover {
+            background: #65ddcc;
+        }
+
+        .btn-secondary {
+            border: 1px solid #46515f;
+            color: #e5e9ef;
+        }
+
+        .btn-secondary:hover {
+            border-color: #42c7b5;
+            color: #42c7b5;
+        }
+
+        footer {
+            border-top: 1px solid #252b35;
+            padding: 28px 8%;
+            color: #8993a2;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer strong {
+            color: #42c7b5;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 25px 6%;
+            }
+
+            .header-label {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 6% 45px;
+            }
+
+            .resources {
+                padding: 15px 6% 60px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-  <h1>M.D.S</h1>
-  <p>Educational Resources & Student Development</p>
-  <p>Created by Mahdi Cherif</p>
-</header>
+    <header>
+        <div class="logo">M.D.<span>S</span></div>
+        <div class="header-label">PUBLIC RESOURCES</div>
+    </header>
 
-<main>
-  <section class="card">
-    <h2>Welcome to M.D.S</h2>
-    <p>
-      A learning initiative dedicated to sharing educational
-      resources and helping students develop their academic
-      and professional skills.
-    </p>
-  </section>
+    <main>
+        <section class="hero">
+            <div class="eyebrow">LEARN · BUILD · EVOLVE</div>
 
-  <section class="card">
-    <h2>🎓 Réussir son PFE</h2>
-    <p>
-      Le guide complet pour accompagner les étudiants,
-      de la recherche de stage jusqu'à la soutenance.
-    </p>
-    <ul>
-      <li>CV et lettre de motivation</li>
-      <li>Recherche de stage et entretien</li>
-      <li>Organisation et développement du PFE</li>
-      <li>Rédaction du rapport</li>
-      <li>Préparation de la soutenance</li>
-    </ul>
-    <a class="button"
-       href="PFE-GUIDE/Guide_Complet_Reussir_Son_PFE.pdf"
-       target="_blank">
-       Consulter le guide PDF
-    </a>
-  </section>
+            <h1>
+                Build your future.<br>
+                <span>Leave a trace.</span>
+            </h1>
 
-  <section class="card">
-    <h2>📚 Presentations & Resources</h2>
-    <p>
-      Discover educational presentations, templates
-      and other useful resources.
-    </p>
-    <a class="button"
-       href="PRESENTATIONS/">
-       Explore presentations
-    </a>
-  </section>
-</main>
+            <p class="intro">
+                Des ressources conçues pour accompagner les étudiants
+                en informatique dans leur parcours PFE, de la préparation
+                jusqu'à la réalisation de leur projet.
+            </p>
+        </section>
 
-<footer>
-  M.D.S — Created by Mahdi Cherif<br>
-  Educational Resources • 2026
-</footer>
+        <section class="resources">
+            <h2 class="section-title">The Resources</h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="number">EDITION 01</div>
+
+                    <h3>Réussir son PFE</h3>
+
+                    <p>
+                        Un guide pratique pour préparer son stage,
+                        organiser son travail et réussir sa soutenance.
+                    </p>
+
+                    <div class="actions">
+                        <a class="btn btn-primary"
+                           href="./MDS_ED01.pdf"
+                           target="_blank"
+                           rel="noopener">
+                            Consulter le guide
+                        </a>
+
+                        <a class="btn btn-secondary"
+                           href="./MDS_ED01.pdf"
+                           download>
+                            Télécharger
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="number">EDITION 02</div>
+
+                    <h3>Réaliser son projet PFE</h3>
+
+                    <p>
+                        Un guide technique pour comprendre les étapes
+                        de conception et de développement logiciel
+                        avec la méthode Waterfall.
+                    </p>
+
+                    <div class="actions">
+                        <a class="btn btn-primary"
+                           href="./MDS_ED02.pdf"
+                           target="_blank"
+                           rel="noopener">
+                            Consulter le guide
+                        </a>
+
+                        <a class="btn btn-secondary"
+                           href="./MDS_ED02.pdf"
+                           download>
+                            Télécharger
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>© 2026 <strong>M.D.S</strong></div>
+        <div>Created by Mahdi Cherif</div>
+    </footer>
 
 </body>
 </html>
