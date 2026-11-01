@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>M.D.S | Public Resources</title>
+    <title>M.D.S — Public Resources</title>
 
-    <meta name="description"
-          content="M.D.S - Ressources et guides pratiques pour les étudiants en informatique et les futurs ingénieurs logiciels.">
+    <meta name="description" content="M.D.S — Guides pratiques pour les étudiants en informatique : préparation du PFE et réalisation d'un projet logiciel.">
 
     <style>
         * {
@@ -18,16 +17,15 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
             background: #0b0e13;
-            color: #f5f5f5;
-            min-height: 100vh;
+            color: #f2f4f7;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
         }
 
         header {
-            padding: 35px 8%;
-            border-bottom: 1px solid #252b35;
+            padding: 28px 8%;
+            border-bottom: 1px solid #252d38;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,7 +33,7 @@
 
         .logo {
             font-size: 27px;
-            font-weight: bold;
+            font-weight: 800;
             letter-spacing: 3px;
         }
 
@@ -44,25 +42,25 @@
         }
 
         .header-label {
-            color: #929baa;
-            font-size: 13px;
+            color: #8994a3;
+            font-size: 12px;
+            letter-spacing: 2px;
         }
 
         .hero {
-            padding: 90px 8% 65px;
-            max-width: 1000px;
+            padding: 95px 8% 75px;
         }
 
         .eyebrow {
             color: #42c7b5;
-            font-size: 13px;
             letter-spacing: 3px;
-            margin-bottom: 20px;
+            font-size: 12px;
+            margin-bottom: 22px;
         }
 
         h1 {
-            font-size: clamp(38px, 6vw, 65px);
-            line-height: 1.1;
+            font-size: clamp(38px, 6vw, 66px);
+            line-height: 1.12;
             margin-bottom: 25px;
         }
 
@@ -71,33 +69,33 @@
         }
 
         .intro {
-            color: #a7afbd;
-            max-width: 600px;
+            color: #a4adba;
+            max-width: 620px;
             font-size: 16px;
         }
 
         .resources {
-            padding: 20px 8% 90px;
+            padding: 10px 8% 100px;
         }
 
         .section-title {
-            font-size: 21px;
-            margin-bottom: 25px;
+            font-size: 22px;
+            margin-bottom: 28px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 22px;
             max-width: 1050px;
         }
 
         .card {
-            background: #121720;
-            border: 1px solid #29313d;
+            background: #121821;
+            border: 1px solid #293341;
             border-radius: 12px;
-            padding: 28px;
-            transition: 0.25s ease;
+            padding: 30px;
+            transition: 0.25s;
         }
 
         .card:hover {
@@ -105,34 +103,34 @@
             border-color: #42c7b5;
         }
 
-        .number {
+        .edition {
             color: #42c7b5;
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+            font-size: 22px;
+            margin-bottom: 14px;
         }
 
         .card p {
-            color: #9da6b5;
+            color: #9da8b7;
             font-size: 14px;
-            min-height: 70px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+            min-height: 65px;
         }
 
         .actions {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 15px;
+            padding: 11px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 13px;
@@ -140,55 +138,52 @@
             transition: 0.2s;
         }
 
-        .btn-primary {
+        .primary {
             background: #42c7b5;
-            color: #08110f;
+            color: #07120f;
         }
 
-        .btn-primary:hover {
-            background: #65ddcc;
+        .primary:hover {
+            background: #6adaca;
         }
 
-        .btn-secondary {
-            border: 1px solid #46515f;
-            color: #e5e9ef;
+        .secondary {
+            color: #e8edf3;
+            border: 1px solid #455160;
         }
 
-        .btn-secondary:hover {
+        .secondary:hover {
             border-color: #42c7b5;
             color: #42c7b5;
         }
 
         footer {
-            border-top: 1px solid #252b35;
-            padding: 28px 8%;
-            color: #8993a2;
-            font-size: 13px;
+            border-top: 1px solid #252d38;
+            padding: 27px 8%;
             display: flex;
             justify-content: space-between;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 10px;
+            color: #8994a3;
+            font-size: 13px;
         }
 
         footer strong {
             color: #42c7b5;
         }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 25px 6%;
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            header, .hero, .resources, footer {
+                padding-left: 6%;
+                padding-right: 6%;
             }
 
             .header-label {
-                display: none;
-            }
-
-            .hero {
-                padding: 65px 6% 45px;
-            }
-
-            .resources {
-                padding: 15px 6% 60px;
+                font-size: 10px;
             }
         }
     </style>
@@ -196,93 +191,104 @@
 
 <body>
 
-    <header>
-        <div class="logo">M.D.<span>S</span></div>
-        <div class="header-label">PUBLIC RESOURCES</div>
-    </header>
+<header>
+    <div class="logo">M.D.<span>S</span></div>
+    <div class="header-label">PUBLIC RESOURCES</div>
+</header>
 
-    <main>
-        <section class="hero">
-            <div class="eyebrow">LEARN · BUILD · EVOLVE</div>
+<main>
 
-            <h1>
-                Build your future.<br>
-                <span>Leave a trace.</span>
-            </h1>
+    <section class="hero">
+        <div class="eyebrow">LEARN · BUILD · EVOLVE</div>
 
-            <p class="intro">
-                Des ressources conçues pour accompagner les étudiants
-                en informatique dans leur parcours PFE, de la préparation
-                jusqu'à la réalisation de leur projet.
-            </p>
-        </section>
+        <h1>
+            Build your future.<br>
+            <span>Leave a trace.</span>
+        </h1>
 
-        <section class="resources">
-            <h2 class="section-title">The Resources</h2>
+        <p class="intro">
+            Une initiative dédiée au partage du savoir et à
+            l'accompagnement des étudiants en informatique.
+            Deux guides pour mieux préparer son PFE et construire
+            un véritable projet logiciel.
+        </p>
+    </section>
 
-            <div class="cards">
+    <section class="resources">
 
-                <article class="card">
-                    <div class="number">EDITION 01</div>
+        <h2 class="section-title">The Resources</h2>
 
-                    <h3>Réussir son PFE</h3>
+        <div class="cards">
 
-                    <p>
-                        Un guide pratique pour préparer son stage,
-                        organiser son travail et réussir sa soutenance.
-                    </p>
+            <!-- GUIDE 01 -->
+            <article class="card">
 
-                    <div class="actions">
-                        <a class="btn btn-primary"
-                           href="./MDS_ED01.pdf"
-                           target="_blank"
-                           rel="noopener">
-                            Consulter le guide
-                        </a>
+                <div class="edition">EDITION 01</div>
 
-                        <a class="btn btn-secondary"
-                           href="./MDS_ED01.pdf"
-                           download>
-                            Télécharger
-                        </a>
-                    </div>
-                </article>
+                <h3>Réussir son PFE</h3>
 
-                <article class="card">
-                    <div class="number">EDITION 02</div>
+                <p>
+                    De la recherche de stage à la soutenance :
+                    les étapes essentielles pour préparer et
+                    réussir son projet de fin d'études.
+                </p>
 
-                    <h3>Réaliser son projet PFE</h3>
+                <div class="actions">
+                    <a class="btn primary"
+                       href="./MDS_ED01.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Consulter le guide
+                    </a>
 
-                    <p>
-                        Un guide technique pour comprendre les étapes
-                        de conception et de développement logiciel
-                        avec la méthode Waterfall.
-                    </p>
+                    <a class="btn secondary"
+                       href="./MDS_ED01.pdf"
+                       download="MDS_ED01.pdf">
+                        Télécharger
+                    </a>
+                </div>
 
-                    <div class="actions">
-                        <a class="btn btn-primary"
-                           href="./MDS_ED02.pdf"
-                           target="_blank"
-                           rel="noopener">
-                            Consulter le guide
-                        </a>
+            </article>
 
-                        <a class="btn btn-secondary"
-                           href="./MDS_ED02.pdf"
-                           download>
-                            Télécharger
-                        </a>
-                    </div>
-                </article>
+            <!-- GUIDE 02 -->
+            <article class="card">
 
-            </div>
-        </section>
-    </main>
+                <div class="edition">EDITION 02</div>
 
-    <footer>
-        <div>© 2026 <strong>M.D.S</strong></div>
-        <div>Created by Mahdi Cherif</div>
-    </footer>
+                <h3>Réaliser son projet PFE</h3>
+
+                <p>
+                    Un guide pratique de conception et de
+                    développement logiciel avec la méthode
+                    en cascade (Waterfall Model).
+                </p>
+
+                <div class="actions">
+                    <a class="btn primary"
+                       href="./MDS_ED02.pdf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Consulter le guide
+                    </a>
+
+                    <a class="btn secondary"
+                       href="./MDS_ED02.pdf"
+                       download="MDS_ED02.pdf">
+                        Télécharger
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div>© 2026 <strong>M.D.S</strong></div>
+    <div>Created by Mahdi Cherif</div>
+</footer>
 
 </body>
 </html>
