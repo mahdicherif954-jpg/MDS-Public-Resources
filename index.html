@@ -1,294 +1,219 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>M.D.S — Public Resources</title>
+  <title>M.D.S — Ressources éducatives pour étudiants en informatique</title>
+  <meta name="description" content="M.D.S est une plateforme de ressources éducatives libres pour les étudiants en informatique et génie logiciel : guides pour réussir et réaliser son projet de fin d’études (PFE).">
+  <meta name="author" content="Mahdi Cherif">
+  <meta name="keywords" content="PFE, projet de fin d’études, génie logiciel, informatique, guide, méthode en cascade, Waterfall, UML, étudiants">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0B0E13">
+  <meta name="color-scheme" content="dark">
 
-    <meta name="description" content="M.D.S — Guides pratiques pour les étudiants en informatique : préparation du PFE et réalisation d'un projet logiciel.">
+  <!-- Open Graph / réseaux sociaux (ajoutez og:url et og:image avec l'adresse définitive du site) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="M.D.S">
+  <meta property="og:title" content="M.D.S — Learn. Build. Create. Evolve.">
+  <meta property="og:description" content="Ressources éducatives libres pour accompagner les étudiants dans leur projet de fin d’études.">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Indique le plus tôt possible que JavaScript est actif (évite un flash lors des animations) -->
+  <script>document.documentElement.classList.add("js");</script>
 
-        body {
-            background: #0b0e13;
-            color: #f2f4f7;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-        header {
-            padding: 28px 8%;
-            border-bottom: 1px solid #252d38;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: 800;
-            letter-spacing: 3px;
-        }
-
-        .logo span {
-            color: #42c7b5;
-        }
-
-        .header-label {
-            color: #8994a3;
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-        .hero {
-            padding: 95px 8% 75px;
-        }
-
-        .eyebrow {
-            color: #42c7b5;
-            letter-spacing: 3px;
-            font-size: 12px;
-            margin-bottom: 22px;
-        }
-
-        h1 {
-            font-size: clamp(38px, 6vw, 66px);
-            line-height: 1.12;
-            margin-bottom: 25px;
-        }
-
-        h1 span {
-            color: #42c7b5;
-        }
-
-        .intro {
-            color: #a4adba;
-            max-width: 620px;
-            font-size: 16px;
-        }
-
-        .resources {
-            padding: 10px 8% 100px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 28px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
-            max-width: 1050px;
-        }
-
-        .card {
-            background: #121821;
-            border: 1px solid #293341;
-            border-radius: 12px;
-            padding: 30px;
-            transition: 0.25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #42c7b5;
-        }
-
-        .edition {
-            color: #42c7b5;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 14px;
-        }
-
-        .card p {
-            color: #9da8b7;
-            font-size: 14px;
-            margin-bottom: 28px;
-            min-height: 65px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 11px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .primary {
-            background: #42c7b5;
-            color: #07120f;
-        }
-
-        .primary:hover {
-            background: #6adaca;
-        }
-
-        .secondary {
-            color: #e8edf3;
-            border: 1px solid #455160;
-        }
-
-        .secondary:hover {
-            border-color: #42c7b5;
-            color: #42c7b5;
-        }
-
-        footer {
-            border-top: 1px solid #252d38;
-            padding: 27px 8%;
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            flex-wrap: wrap;
-            color: #8994a3;
-            font-size: 13px;
-        }
-
-        footer strong {
-            color: #42c7b5;
-        }
-
-        @media (max-width: 700px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            header, .hero, .resources, footer {
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            .header-label {
-                font-size: 10px;
-            }
-        }
-    </style>
+  <!-- Données structurées (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "M.D.S",
+    "alternateName": "M.D.S — Created by Mahdi Cherif",
+    "description": "Plateforme de ressources éducatives pour les étudiants en informatique et génie logiciel.",
+    "inLanguage": "fr",
+    "author": { "@type": "Person", "name": "Mahdi Cherif" }
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-<header>
-    <div class="logo">M.D.<span>S</span></div>
-    <div class="header-label">PUBLIC RESOURCES</div>
-</header>
+  <!-- ============================== EN-TÊTE ============================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#accueil" aria-label="M.D.S — retour à l’accueil">
+        <span class="logo-mark">M<i>.</i>D<i>.</i>S</span>
+      </a>
 
-<main>
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
 
-    <section class="hero">
-        <div class="eyebrow">LEARN · BUILD · EVOLVE</div>
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
 
-        <h1>
-            Build your future.<br>
-            <span>Leave a trace.</span>
+  <main id="contenu">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">Public Educational Resources Platform</p>
+
+        <h1 class="hero-title reveal" id="hero-title">
+          Partager le savoir.<br>
+          <span class="accent">Construire l’avenir.</span>
         </h1>
 
-        <p class="intro">
-            Une initiative dédiée au partage du savoir et à
-            l'accompagnement des étudiants en informatique.
-            Deux guides pour mieux préparer son PFE et construire
-            un véritable projet logiciel.
+        <p class="hero-lead reveal">
+          <strong>M.D.S</strong> est une initiative de partage de connaissances qui accompagne
+          les étudiants en informatique et en génie logiciel, de la préparation à la réalisation
+          de leur projet de fin d’études.
         </p>
-    </section>
 
-    <section class="resources">
-
-        <h2 class="section-title">The Resources</h2>
-
-        <div class="cards">
-
-            <!-- GUIDE 01 -->
-            <article class="card">
-
-                <div class="edition">EDITION 01</div>
-
-                <h3>Réussir son PFE</h3>
-
-                <p>
-                    De la recherche de stage à la soutenance :
-                    les étapes essentielles pour préparer et
-                    réussir son projet de fin d'études.
-                </p>
-
-                <div class="actions">
-                    <a class="btn primary"
-                       href="./MDS_ED01.pdf"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Consulter le guide
-                    </a>
-
-                    <a class="btn secondary"
-                       href="./MDS_ED01.pdf"
-                       download="MDS_ED01.pdf">
-                        Télécharger
-                    </a>
-                </div>
-
-            </article>
-
-            <!-- GUIDE 02 -->
-            <article class="card">
-
-                <div class="edition">EDITION 02</div>
-
-                <h3>Réaliser son projet PFE</h3>
-
-                <p>
-                    Un guide pratique de conception et de
-                    développement logiciel avec la méthode
-                    en cascade (Waterfall Model).
-                </p>
-
-                <div class="actions">
-                    <a class="btn primary"
-                       href="./MDS_ED02.pdf"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Consulter le guide
-                    </a>
-
-                    <a class="btn secondary"
-                       href="./MDS_ED02.pdf"
-                       download="MDS_ED02.pdf">
-                        Télécharger
-                    </a>
-                </div>
-
-            </article>
-
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#resources">
+            Accéder aux ressources
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#vision">Découvrir la vision</a>
         </div>
+
+        <p class="hero-motto reveal" aria-label="Learn. Build. Create. Evolve.">
+          <span>Learn.</span> <span>Build.</span> <span>Create.</span> <span>Evolve.</span>
+        </p>
+      </div>
     </section>
 
-</main>
+    <!-- ============================== VISION ============================== -->
+    <section class="section" id="vision" aria-labelledby="vision-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Vision</p>
+          <h2 id="vision-title">Une connaissance utile, claire et accessible</h2>
+          <p class="section-lead">
+            Le projet de fin d’études est une étape décisive. M.D.S rassemble des ressources
+            pratiques, structurées et gratuites pour aider chaque étudiant à y arriver avec méthode.
+          </p>
+        </header>
 
-<footer>
-    <div>© 2026 <strong>M.D.S</strong></div>
-    <div>Created by Mahdi Cherif</div>
-</footer>
+        <ul class="pillars">
+          <li class="card reveal">
+            <span class="pillar-index">01</span>
+            <h3>Learn</h3>
+            <p>Comprendre les méthodes, les outils et les attentes du monde professionnel.</p>
+          </li>
+          <li class="card reveal">
+            <span class="pillar-index">02</span>
+            <h3>Build</h3>
+            <p>Concevoir et développer un projet logiciel complet, étape par étape.</p>
+          </li>
+          <li class="card reveal">
+            <span class="pillar-index">03</span>
+            <h3>Create</h3>
+            <p>Produire des livrables de qualité : documents, code, tests, démonstration.</p>
+          </li>
+          <li class="card reveal">
+            <span class="pillar-index">04</span>
+            <h3>Evolve</h3>
+            <p>Progresser en continu et transmettre à son tour ce que l’on a appris.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- ============================== RESOURCES ============================== -->
+    <section class="section section-alt" id="resources" aria-labelledby="resources-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Resources</p>
+          <h2 id="resources-title">Les guides disponibles</h2>
+          <p class="section-lead">
+            Deux éditions publiées à ce jour. Consultez-les en ligne ou téléchargez-les au format PDF.
+          </p>
+        </header>
+
+        <!-- Les cartes sont générées par assets/js/main.js à partir de assets/js/data/guides.js -->
+        <div class="guides" id="guides" aria-live="polite">
+          <noscript>
+            <!-- Version de secours sans JavaScript : mêmes fichiers, mêmes chemins -->
+            <article class="card guide">
+              <p class="guide-edition">Édition 01 · Guide général</p>
+              <h3 class="guide-title">Réussir son PFE</h3>
+              <p class="guide-desc">De la recherche de stage jusqu’à la préparation de la soutenance.</p>
+              <div class="guide-actions">
+                <a class="btn btn-primary" href="resources/guides/MDS_ED01.pdf" target="_blank" rel="noopener">Consulter</a>
+                <a class="btn btn-ghost" href="resources/guides/MDS_ED01.pdf" download>Télécharger</a>
+              </div>
+            </article>
+            <article class="card guide">
+              <p class="guide-edition">Édition 02 · Guide technique</p>
+              <h3 class="guide-title">Réaliser son projet PFE</h3>
+              <p class="guide-desc">Conception et développement logiciel avec la méthode en cascade (Waterfall Model).</p>
+              <div class="guide-actions">
+                <a class="btn btn-primary" href="resources/guides/MDS_ED02.pdf" target="_blank" rel="noopener">Consulter</a>
+                <a class="btn btn-ghost" href="resources/guides/MDS_ED02.pdf" download>Télécharger</a>
+              </div>
+            </article>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <header class="section-head reveal">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">À propos de M.D.S</h2>
+        </header>
+
+        <div class="about-body reveal">
+          <p>
+            M.D.S est un projet personnel de <strong>Mahdi Cherif</strong>, né d’une conviction simple :
+            la connaissance gagne à être partagée. Chaque guide est pensé comme un outil concret,
+            utilisable dès le premier jour par un étudiant qui prépare son projet de fin d’études.
+          </p>
+          <p>
+            Les ressources sont conçues pour être claires, rigoureuses et honnêtes : elles distinguent
+            les conseils personnels des exigences officielles, qui varient selon chaque établissement.
+          </p>
+          <p class="about-signature">M.D.S — Created by Mahdi Cherif</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">M<i>.</i>D<i>.</i>S</span>
+        <p>Created by Mahdi Cherif</p>
+      </div>
+      <p class="footer-copy">
+        © 2026 M.D.S — Mahdi Cherif. Tous droits réservés.
+      </p>
+      <a class="footer-top" href="#top">Retour en haut ↑</a>
+    </div>
+  </footer>
+
+  <!-- Données puis logique (ordre important) -->
+  <script src="assets/js/data/guides.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
