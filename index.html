@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>M.D.S — Created by Mahdi Cherif</title>
+<meta name="description" content="M.D.S : ressources éducatives gratuites pour les étudiants en informatique et génie logiciel.">
+
+<style>
+:root {
+    --bg: #0b0e13;
+    --card: #121821;
+    --accent: #42c7b5;
+    --text: #f2f4f7;
+    --muted: #9da8b7;
+    --border: #293341;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+.container {
+    width: 84%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding: 22px 0;
+    position: sticky;
+    top: 0;
+    background: rgba(11,14,19,.96);
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.hero {
+    padding: 115px 0 95px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 16px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #07120f;
+}
+
+.btn-primary:hover {
+    background: #6adaca;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+section.content {
+    padding: 85px 0;
+}
+
+.section-alt {
+    background: #0e131b;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.edition {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    color: var(--muted);
+    max-width: 750px;
+}
+
+.signature {
+    margin-top: 25px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer strong {
+    color: var(--accent);
+}
+
+@media(max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--card);
+        flex-direction: column;
+        padding: 25px 5%;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="#home" class="logo">M.D.<span>S</span></a>
+
+        <button class="menu-btn" id="menuBtn"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false">☰</button>
+
+        <nav id="navigation">
+            <a href="#home">Accueil</a>
+            <a href="#vision">Vision</a>
+            <a href="#resources">Resources</a>
+            <a href="#about">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="container">
+
+        <div class="eyebrow">Public Educational Resources Platform</div>
+
+        <h1>
+            Partager le savoir.<br>
+            <span class="accent">Construire l'avenir.</span>
+        </h1>
+
+        <p>
+            M.D.S est une initiative de partage de connaissances
+            dédiée aux étudiants en informatique et en génie logiciel.
+            Des ressources pratiques pour préparer et réaliser
+            son projet de fin d'études.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#resources" class="btn btn-primary">
+                Découvrir les guides →
+            </a>
+
+            <a href="#vision" class="btn btn-secondary">
+                Notre vision
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="content" id="vision">
+    <div class="container">
+
+        <div class="eyebrow">Our Vision</div>
+
+        <h2 class="section-title">
+            Learn. Build. Create. Evolve.
+        </h2>
+
+        <p class="section-description">
+            Notre objectif est simple : rendre le savoir accessible,
+            faciliter l'apprentissage et accompagner les étudiants
+            vers la réussite de leurs projets.
+        </p>
+
+    </div>
+</section>
+
+<section class="content section-alt" id="resources">
+    <div class="container">
+
+        <div class="eyebrow">The Resources</div>
+
+        <h2 class="section-title">Nos deux guides</h2>
+
+        <p class="section-description">
+            Découvrez les deux premières éditions de M.D.S.
+            Consultez-les gratuitement ou téléchargez-les.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="edition">EDITION 01 · GUIDE GÉNÉRAL</div>
+
+                <h3>Réussir son PFE</h3>
+
+                <p>
+                    De la recherche de stage à la soutenance :
+                    les étapes essentielles pour réussir son projet
+                    de fin d'études.
+                </p>
+
+                <div class="card-actions">
+                    <a href="./MDS_ED01.pdf"
+                       target="_blank"
+                       rel="noopener"
+                       class="btn btn-primary">
+                        Consulter
+                    </a>
+
+                    <a href="./MDS_ED01.pdf"
+                       download
+                       class="btn btn-secondary">
+                        Télécharger
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="edition">EDITION 02 · GUIDE TECHNIQUE</div>
+
+                <h3>Réaliser son projet PFE</h3>
+
+                <p>
+                    Un guide pratique de conception et de développement
+                    logiciel avec la méthode en cascade
+                    (Waterfall Model).
+                </p>
+
+                <div class="card-actions">
+                    <a href="./MDS_ED02.pdf"
+                       target="_blank"
+                       rel="noopener"
+                       class="btn btn-primary">
+                        Consulter
+                    </a>
+
+                    <a href="./MDS_ED02.pdf"
+                       download
+                       class="btn btn-secondary">
+                        Télécharger
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="content" id="about">
+    <div class="container">
+
+        <div class="eyebrow">About M.D.S</div>
+
+        <h2 class="section-title">À propos du projet</h2>
+
+        <div class="about-text">
+            <p>
+                M.D.S est un projet personnel créé par Mahdi Cherif,
+                avec une conviction : la connaissance gagne à être
+                partagée.
+            </p>
+
+            <p style="margin-top:15px">
+                Chaque ressource est pensée pour apporter une aide
+                concrète aux étudiants et contribuer à leur évolution
+                académique et professionnelle.
+            </p>
+
+            <p class="signature">
+                M.D.S — Created by Mahdi Cherif
+            </p>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div><strong>M.D.S</strong> — Created by Mahdi Cherif</div>
+        <div>© 2026 — Tous droits réservés.</div>
+    </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navigation = document.getElementById("navigation");
+
+menuBtn.addEventListener("click", () => {
+    const opened = navigation.classList.toggle("active");
+    menuBtn.setAttribute("aria-expanded", opened);
+    menuBtn.textContent = opened ? "✕" : "☰";
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navigation.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+    });
+});
+</script>
+
+</body>
+</html>
